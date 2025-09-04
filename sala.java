@@ -19,7 +19,7 @@ boolean [][]asientos = {
       System.out.println(" [ " +(asientos [0][0] ? "D": "O")+"]["+(asientos[0][3]?"D":"O")+"]");
 
 
-//solicitar clave
+//solicitar clav
 System.out.print("INGRESE LA CLAVE: ");
 String clave = teclado.nextLine();
 while (clave.equalsIgnoreCase("cinemark")){
