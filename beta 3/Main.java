@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        casillero casillero = new casillero(4,4); // matriz 4x4 aqui se crea 
+
+        boolean joel = true;
+
+
+        while(joel){
+            System.out.println("Bienvenido a Slots's MJ "+
+                        "\nQue desea hacer el dia de hoy? " +
+                        "\n1. Registrar paquete" +
+                        "\n2. Ver estado de los casilleros" +
+                        "\n3. Informacion del paquete"+
+                        "\n4. Salir");
+            int opcion = sc.nextInt();
+            
+            /*
+             * [0][0] [0][1] [0][2] [0][3]
+               [1][0] [1][1] [1][2] [1][3]
+               [2][0] [2][1] [2][2] [2][3]
+               [3][0] [3][1] [3][2] [3][3]
+             */
+
+            switch (opcion) {
+                case 1:
+                    System.out.print("Fila (0 - 3): "); // de 0 a 3 porque es una matriz 4x4 
+                    int f = sc.nextInt(); // "f" para fila
+                    System.out.print("Columna (0 - 3): "); 
+                    int c = sc.nextInt(); // "c" para columna
+                    sc.nextLine(); // limpiar buffer
+                    System.out.print("Destinatario: "); 
+                    String dest = sc.nextLine();
+                    System.out.print("Fecha: "); 
+                    String fecha = sc.nextLine();
+
+                    paquete p = new paquete(dest, fecha); // crear paquete
+                    
+                    // agregamos una condicion para que no se salga del rango de la matriz 
+                    if(casillero.registrarPaquete(f, c, p)){
+                        System.out.println("Paquete registrado exitosamente.");
+                    } else {
+                        System.out.println("Error: Casillero ocupado.");
+                    }
+                    //agregamos otrA condicion por si ingresa un numero mayor 4 o menor a 1, solo por si a caso (por si ahi gente como leandro )
+                    if(f < 1 || f > 4 || c < 1 || c > 4){
+                        System.out.println("Error: Fila o columna fuera de rango.");
+                        break; // salir del case
+                    }
+                case 2:
+                    casillero.estadoCas(); // mostrar el estado del casillero 
+                    break;
+        
+
+                case 3:
+
+
+
+
+
+
+
+
+                case 4:
+                    joel= false; // salir del while o el bucle o del programa o del todo
+
+
+                }
+
+    }
+}}
