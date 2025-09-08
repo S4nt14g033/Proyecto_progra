@@ -21,8 +21,8 @@ public class Main {
             
             /*
              * [0][0] [0][1] [0][2] [0][3]
-               [1][0] [1][1] [1][2] [1][3]
-               [2][0] [2][1] [2][2] [2][3]
+               [1][0] [1][1] [1][2] [1][3]  estas son las posiciones de cada 
+               [2][0] [2][1] [2][2] [2][3]  una de las celdas
                [3][0] [3][1] [3][2] [3][3]
              */
 
@@ -35,10 +35,10 @@ public class Main {
                     sc.nextLine(); // limpiar buffer
                     System.out.print("Destinatario: "); 
                     String dest = sc.nextLine();
-                    System.out.print("Fecha: "); 
-                    String fecha = sc.nextLine();
+                    /*System.out.print("Fecha: "); 
+                    String fecha = sc.nextLine();*/
 
-                    paquete p = new paquete(dest, fecha); // crear paquete
+                    paquete p = new paquete(dest); // crear paquete
                     
                     // agregamos una condicion para que no se salga del rango de la matriz 
                     if(casillero.registrarPaquete(f, c, p)){
@@ -67,7 +67,7 @@ public class Main {
  
                 if (info != null) { // esta llinea se lee como "si info es diferente de null" el "!" es un operador logico que significa "diferente de"
                     System.out.println(" Destino: " + info.getDestino()); // si la condicion se cumple muestra el destino y la fecha
-                    System.out.println(" Fecha de Ingreso: " + info.getIngreso());
+                    System.out.println(" Fecha de Ingreso: " + info.getfechaIngreso());
                 } else {
                     System.out.println(" Casillero vacío."); // de lo contrario tomara que el casillero esta vacio 
                 }
@@ -80,5 +80,6 @@ public class Main {
                 }
 
     }
+    sc.close();
 
 }}
