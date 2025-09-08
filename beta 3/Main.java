@@ -58,13 +58,21 @@ public class Main {
 
                 case 3:
 
+                System.out.print("Fila (0-3): "); 
+                f = sc.nextInt();
+                System.out.print("Columna (0-3): "); 
+                c = sc.nextInt();
 
-
-
-
-
-
-
+                paquete info = casillero.getpaquete(f, c);  //metodo para obtener la informacion del paquete   
+ 
+                if (info != null) { // esta llinea se lee como "si info es diferente de null" el "!" es un operador logico que significa "diferente de"
+                    System.out.println(" Destino: " + info.getDestino()); // si la condicion se cumple muestra el destino y la fecha
+                    System.out.println(" Fecha de Ingreso: " + info.getIngreso());
+                } else {
+                    System.out.println(" Casillero vacío."); // de lo contrario tomara que el casillero esta vacio 
+                }
+                break;
+                    
                 case 4:
                     joel= false; // salir del while o el bucle o del programa o del todo
 
@@ -72,4 +80,5 @@ public class Main {
                 }
 
     }
+
 }}
