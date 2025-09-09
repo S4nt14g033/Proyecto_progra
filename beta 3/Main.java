@@ -47,7 +47,7 @@ public class Main {
                         System.out.println("Error: Casillero ocupado.");
                     }
                     //agregamos otrA condicion por si ingresa un numero mayor 4 o menor a 1, solo por si a caso (por si ahi gente como leandro )
-                    if(f < 1 || f > 4 || c < 1 || c > 4){
+                    if(f < 0 || f > 4 || c < 0 || c > 4){
                         System.out.println("Error: Fila o columna fuera de rango.");
                         break; // salir del case
                     }
